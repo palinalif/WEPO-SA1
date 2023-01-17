@@ -1,0 +1,275 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/nanumgothic/v21/PN_3Rfi-oW3hYwmKDpxS7F_D-djb.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/nanumgothic/v21/PN_oRfi-oW3hYwmKDpxS7F_LQv3LyVsj.ttf) format('truetype');
+}
+body {
+  display: grid;
+}
+#primary-nav {
+  background-color: #F283B6;
+  border-bottom: 8px solid #E06C9F;
+  padding: 20px 0px 20px 0px;
+  display: grid;
+  grid-area: primary-nav;
+  justify-content: center;
+  width: 100%;
+}
+#secondary-nav {
+  font-size: 1.5em;
+  grid-area: secondary-nav;
+  padding: 40px 0px 40px 0px;
+  width: 100%;
+}
+#secondary-nav ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+#secondary-nav ul li {
+  padding-left: 40px;
+}
+#secondary-nav a:link,
+a:visited,
+a:hover {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+#main {
+  background-color: #EDBFB7;
+  display: grid;
+  grid-area: main;
+  justify-items: center;
+}
+.cities {
+  display: grid;
+  grid-area: cities;
+}
+.cities li {
+  background-color: #FFFFFF;
+  border: 1px solid #E06C9F;
+}
+.city-img {
+  width: 250px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+#banner-area {
+  display: grid;
+  grid-area: banner-area;
+}
+#banner h1 {
+  text-align: center;
+  color: #FFFFFF;
+}
+#banner {
+  padding: 10px;
+  text-align: center;
+}
+.city-previews {
+  display: grid;
+  grid-area: city-previews;
+}
+.city-previews li {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.pilot {
+  display: grid;
+  background-color: #B5BFA1;
+  padding: 40px;
+  color: #FFFFFF;
+}
+.pilot img {
+  width: 150px;
+  height: 150px;
+}
+footer {
+  background-color: #F283B6;
+  border-top: 8px solid #E06C9F;
+  height: 70px;
+  grid-area: footer;
+  width: 100%;
+}
+#logo {
+  width: 200px;
+}
+@media screen and (max-width: 480px) {
+  body {
+    display: grid;
+  }
+  #right-aside {
+    display: none;
+  }
+  #right-aside-inside {
+    display: none;
+  }
+  #main {
+    grid-template-areas: "primary-nav" "secondary-nav" "cities" "banner" "footer";
+  }
+  .city-previews {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto auto;
+  }
+  .city-previews li {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+  }
+  .city-img {
+    width: 220px;
+    height: 120px;
+  }
+  .text-wrapper {
+    padding: 5px;
+  }
+  .text-wrapper p {
+    font-size: 0.85em;
+  }
+  .cities li {
+    padding: 20px;
+  }
+  .cities li:nth-of-type(odd) {
+    display: grid;
+    grid-template-areas: "city-img text-wrapper";
+  }
+  .cities li:nth-of-type(even) {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .cities li:nth-of-type(even) .city-img {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .cities li:nth-of-type(even) .text-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  #right-aside {
+    display: none;
+  }
+  body {
+    display: grid;
+  }
+  #main {
+    grid-template-areas: "primary-nav" "secondary-nav" "cities" "banner" "footer";
+  }
+  .city-previews {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+  }
+  .city-previews li {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .cities {
+    grid-template-areas: "new-york san-fran" "tokyo tokyo";
+  }
+  .city-img {
+    width: 180px;
+    height: 80px;
+  }
+  .cities li:nth-child(1) {
+    grid-area: new-york;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto auto;
+  }
+  .cities li:nth-child(2) {
+    grid-area: san-fran;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto auto;
+  }
+  .cities li:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-area: tokyo;
+  }
+  .cities li:nth-of-type(3) .city-img {
+    grid-column: 2;
+    grid-row: 1;
+    height: 120px;
+    width: 220px;
+  }
+  .cities li:nth-of-type(3) .text-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .text-wrapper {
+    padding: 10px;
+  }
+  .text-wrapper p {
+    font-size: 0.8em;
+  }
+  #banner {
+    grid-area: banner;
+  }
+  #right-aside-inside {
+    grid-area: right-aside-inside;
+  }
+  .banner-area {
+    grid-template-columns: 100px 100px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #right-aside-inside {
+    display: none;
+  }
+  body {
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-template-areas: "main right-aside";
+  }
+  #right-aside {
+    border-left: 8px solid #6E9887;
+  }
+  #main {
+    grid-template-areas: "primary-nav" "secondary-nav" "cities" "banner-area" "footer";
+  }
+  .cities {
+    grid-template-columns: auto auto auto;
+  }
+  .cities li {
+    padding: 20px;
+  }
+  .city-previews {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 40px;
+  }
+  .city-previews li {
+    margin-right: 80px;
+  }
+  .pilot {
+    grid-template-rows: 170px auto;
+  }
+}
