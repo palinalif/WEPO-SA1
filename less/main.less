@@ -199,6 +199,7 @@ footer {
         display:grid;
         grid-template-columns: auto auto;
         justify-items: center;
+        align-items: center;
     }
     .city-previews li {
         width:100px;
@@ -249,12 +250,20 @@ footer {
     }
     #banner {
         grid-area: banner;
+        display: grid;
+        align-items: center;
     }
     #right-aside-inside {
+        display: grid;
+        align-items: center;
+        justify-items: center;
         grid-area: right-aside-inside;
+        text-align: center;
     }
     .banner-area {
-        grid-template-columns: 100px 100px;
+        display: grid;
+        grid-template-areas: "banner right-aside-inside";
+        grid-template-columns: 1fr 1fr;
     }
 }
 
